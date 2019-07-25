@@ -52,12 +52,111 @@
         </div>
     </nz-header>
     <nz-content>
-        <!-- <nz-breadcrumb>
-            <nz-breadcrumb-item>Home</nz-breadcrumb-item>
-            <nz-breadcrumb-item>List</nz-breadcrumb-item>
-            <nz-breadcrumb-item>App</nz-breadcrumb-item>
-        </nz-breadcrumb> -->
-        <div class="inner-content">Content</div>
+        <div class="content-header"
+             nz-row>
+            <div nz-col
+                 nzSpan="8">
+                <h3>
+                    Создание новой брони
+                </h3>
+            </div>
+            <div nz-col
+                 nzSpan="8">
+                <nz-steps>
+                    <nz-step></nz-step>
+                    <nz-step></nz-step>
+                    <nz-step></nz-step>
+                    <nz-step></nz-step>
+                </nz-steps>
+            </div>
+        </div>
+        <nz-layout class="inner-layout">
+            <nz-sider nzWidth="200px"
+                      nzTheme="light">
+                <div nz-row>
+                    <div nz-col>
+                        <nz-form-item>
+                            <div>
+                                <label>Выберите источник</label>
+                            </div>
+                            <nz-select [(ngModel)]="selectedValue"
+                                       nzPlaceHolder="Не выбрано">
+                                <nz-option nzValue="source"
+                                           nzLabel="Источник"></nz-option>
+                            </nz-select>
+                        </nz-form-item>
+                    </div>
+                </div>
+                <div nz-row>
+                    <div nz-col>
+                        <nz-card style="width:200px;"
+                                 nzTitle="Card title">
+                            <p>Card content</p>
+                            <p>Card content</p>
+                            <p>Card content</p>
+                        </nz-card>
+                    </div>
+                </div>
+            </nz-sider>
+            <nz-content class="inner-content">
+                <div nz-row 
+                    nzType="flex"
+                    nzJustify="space-between">
+                    <div nz-col
+                         nzSpan="4">
+                        <nz-form-item>
+                            <div>
+                                <label>Дата заезда</label>
+                            </div>
+                            <nz-date-picker [(ngModel)]="dateComming"
+                                            (ngModelChange)="onChange($event)"></nz-date-picker>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col
+                         nzSpan="4">
+                        <nz-form-item>
+                            <div>
+                                <label>Дата аыезда</label>
+                            </div>
+                            <nz-date-picker [(ngModel)]="dateOutComming"
+                                            (ngModelChange)="onChange($event)"></nz-date-picker>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col
+                         nzSpan="4">
+                        <nz-form-item>
+                            <div>
+                                <label>Выберите источник</label>
+                            </div>
+                            <nz-select [(ngModel)]="taxes"
+                                       nzPlaceHolder="Не выбрано">
+                                <nz-option nzValue="all"
+                                           nzLabel="Все тарифы"></nz-option>
+                            </nz-select>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col
+                         nzSpan="4">
+                        <nz-form-item>
+                            <div>
+                                <label>Выберите источник</label>
+                            </div>
+                            <nz-select [(ngModel)]="types"
+                                       nzPlaceHolder="Не выбрано">
+                                <nz-option nzValue="all"
+                                           nzLabel="Все типы номеров"></nz-option>
+                            </nz-select>
+                        </nz-form-item>
+                    </div>
+                    <div nz-col>
+                        <nz-form-item>
+                            <button nz-button
+                                    nzType="primary">Поиск</button>
+                        </nz-form-item>
+                    </div>
+                </div>
+            </nz-content>
+        </nz-layout>
     </nz-content>
     <nz-footer>Ant Design ©2019 Implement By Angular</nz-footer>
 </nz-layout>
